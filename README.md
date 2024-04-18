@@ -22,6 +22,7 @@ Carefully choose the complexity of each LSTM in the ensemble. Too complex models
 Learning Rate Adjustments:
 
 Adjust the learning rates for each subsequent LSTM. Later models might benefit from lower learning rates to fine-tune the predictions on residuals.
+
 Regularization Techniques:
 
 Use dropout, recurrent dropout, and possibly L1/L2 regularization to prevent overfitting, especially since boosting can increase the risk of overfitting by focusing too narrowly on specific aspects of the dataset.
@@ -78,6 +79,7 @@ for i in range(num_boosting_rounds):
     residuals = y_train - np.sum([model.predict(X_train) for model in boosted_models], axis=0)
 
 # Step 5: Aggregation of Predictions
+
 # Combine predictions of all LSTM models by weighted averaging
 def predict_boosted(X, models, weights=None):
     if weights is None:
@@ -86,6 +88,7 @@ def predict_boosted(X, models, weights=None):
     return np.sum(predictions, axis=0)
 
 # Step 6: Model Complexity, Learning Rate Adjustments, Regularization Techniques, Early Stopping
+
 # These can be implemented by adjusting model hyperparameters and training procedures accordingly
 
 # Step 7: Evaluate the boosted model
