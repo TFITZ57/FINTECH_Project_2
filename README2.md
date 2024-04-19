@@ -10,7 +10,7 @@ The project utilizes data from the following sources:
 - Exchange data
 - Economic data
 
-These data sources are accessed through the CoinGecko API, for which the team has an Enterprise plan with a student discount (https://www.coingecko.com/en/api).
+These data sources are accessed through the CoinGecko API, for which the team has an Enterprise plan with a student discount ([https://www.coinmetrics.io/api-v4](https://coinmetrics.io/api-v4/)).
 
 ## Approach
 
