@@ -1,113 +1,68 @@
-# FINTECH_Project_2
-## Resources 
+# Cryptocurrency Data Modeling Project
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Data Description](#data-description)
+3. [Steps](#steps)
+   - [Step 1: Data Collection](#step-1-data-collection)
+   - [Step 2: Data Preprocessing](#step-2-data-preprocessing)
+   - [Step 3: Model Building and Evaluation](#step-3-model-building-and-evaluation)
+   - [Step 4: Implementation of Boosted LSTM](#step-4-implementation-of-boosted-lstm)
+4. [Requirements](#requirements)
+5. [Usage](#usage)
+6. [Acknowledgments](#acknowledgments)
+7. [References](#references)
 
 
-Boosted LSTM Integration 
-### Implementation of Code for Training an initial LSTM Model on a dataset 
+## Overview
+This project aims to analyze and predict cryptocurrency prices and blockchain activities using machine learning techniques, specifically Long Short-Term Memory (LSTM) networks. The data includes various metrics related to Bitcoin, Ethereum, and Dogecoin, as well as blockchain activity and mining data.
 
-Base Model Training:
+## Data Description
+The dataset comprises multiple metrics grouped into the following categories:
+- **Basic Price Information**: Prices of BTC, ETH, and DOGE in USD.
+- **Blockchain Activity Metrics**: Active addresses, transaction count, value, block difficulty, and total fees in USD.
+- **Mining and Revenue Metrics**: Mining revenue, hash rate, hash price, and Bitcoin held by miners.
+- **Market and Economic Indicators**: SOPR, MVRV Ratio, and Rev. Puell Multiple.
+- **Volatility and Network Flows**: Realized volatility over different periods and netflows from/to exchanges.
+- **Lagged Price Data**: Historical price data for time-series analysis.
 
-Begin by training an initial LSTM model on the dataset.
-Compute the residuals or errors (difference between the predicted and actual values).
-Sequential Training:
+## Steps
 
-Train additional LSTM models on the residuals of the previous models.
-Each model focuses on learning the patterns missed by its predecessors.
-Aggregation of Predictions:
+### Step 1: Data Collection
+- Data is sourced from various reliable crypto analytics platforms.
 
-Combine the predictions of all LSTM models, typically by weighted averaging, where weights can be determined based on the performance of each model on a validation dataset.
-Model Complexity:
+### Step 2: Data Preprocessing
+- Includes cleaning, handling missing values, outlier detection, and feature engineering such as timestamp decomposition and rolling window statistics.
 
-Carefully choose the complexity of each LSTM in the ensemble. Too complex models might overfit, especially in later stages where the focus is on fitting residuals.
-Learning Rate Adjustments:
+### Step 3: Model Building and Evaluation
+- Using LSTM networks to capture temporal dependencies within the data.
+- Models are evaluated based on their prediction accuracy and ability to generalize using time series cross-validation.
 
-Adjust the learning rates for each subsequent LSTM. Later models might benefit from lower learning rates to fine-tune the predictions on residuals.
+### Step 4: Implementation of Boosted LSTM
+- Boosting technique is applied to LSTM to enhance model performance by focusing on the residuals of previous models.
 
-Regularization Techniques:
+## Requirements
+- Python 3.x
+- Libraries: pandas, numpy, tensorflow, keras, matplotlib, seaborn, sklearn, pywt (for wavelet transforms)
 
-Use dropout, recurrent dropout, and possibly L1/L2 regularization to prevent overfitting, especially since boosting can increase the risk of overfitting by focusing too narrowly on specific aspects of the dataset.
-Early Stopping:
+## Usage
+Install required packages:
+```bash
+pip install -r requirements.txt
+Run the main script: python main.py
 
-Implement early stopping during training of each LSTM model to avoid overfitting on noise in the residuals.
-Error Monitoring:
+##Acknowledgments
+* CoinMetrics API for providing access to their comprehensive crypto data.
+* Community contributions and suggestions that helped shape the analysis.
 
-Continuously monitor the error patterns; if subsequent models do not significantly improve the predictions, consider stopping the addition of new models to the ensemble.
-Diverse Initialization:
+## References
 
-Initialize each LSTM model differently to promote model diversity, which is key to the success of ensemble methods.
+- CoinMetrics: Comprehensive data and insights for cryptocurrencies. [Visit CoinMetrics](https://coinmetrics.io/)
+- IntoTheBlock: Detailed blockchain data and analytics for Bitcoin and other cryptocurrencies. [Access IntoTheBlock](https://app.intotheblock.com/coin/BTC)
+- Bitcoin Visuals: Graphs and statistics that provide insights into the Bitcoin network. [See Bitcoin Visuals](https://bitcoinvisuals.com/)
+- DeFi Llama API Documentation: Access comprehensive DeFi data through APIs. [Read DeFi Llama Docs](https://defillama.com/docs/api)
+- Federal Reserve Economic Data (FRED) API: Economic data from the Federal Reserve Bank of St. Louis. [Explore FRED API](https://fred.stlouisfed.org/docs/api/fred/)
+- Stock to Flow Model: Understand the relationship between production and current stock available, used for predicting Bitcoin prices. [Learn about Stock to Flow](https://stocktoflow.com/)
+- Twitter API Reference: Official API documentation for accessing Twitter data programmatically. [Twitter API Docs](https://developer.twitter.com/en/docs/api-reference-index)
 
-
-### Imports
-
-import numpy as np
-import tensorflow as tf
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-
-# Step 1: Prepare your dataset
-# Assuming you have your dataset prepared with features X and labels y
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Step 2: Base Model Training
-# Build and train the initial LSTM model
-model = tf.keras.Sequential([
-    tf.keras.layers.LSTM(units=64, input_shape=(X_train.shape[1], X_train.shape[2])),
-    tf.keras.layers.Dense(1)
-])
-model.compile(optimizer='adam', loss='mse')
-model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.1)
-
-# Step 3: Compute Residuals
-# Predict on the training data to compute residuals
-y_pred_train = model.predict(X_train)
-residuals = y_train - y_pred_train
-
-# Step 4: Sequential Training
-# Train additional LSTM models on the residuals
-num_boosting_rounds = 5
-boosted_models = []
-for i in range(num_boosting_rounds):
-    boosted_model = tf.keras.Sequential([
-        tf.keras.layers.LSTM(units=64, input_shape=(X_train.shape[1], X_train.shape[2])),
-        tf.keras.layers.Dense(1)
-    ])
-    boosted_model.compile(optimizer='adam', loss='mse')
-    boosted_model.fit(X_train, residuals, epochs=5, batch_size=32, validation_split=0.1)
-    boosted_models.append(boosted_model)
-    # Compute new residuals for the next iteration
-    residuals = y_train - np.sum([model.predict(X_train) for model in boosted_models], axis=0)
-
-# Step 5: Aggregation of Predictions
-
-# Combine predictions of all LSTM models by weighted averaging
-def predict_boosted(X, models, weights=None):
-    if weights is None:
-        weights = np.ones(len(models)) / len(models)
-    predictions = [model.predict(X) * weight for model, weight in zip(models, weights)]
-    return np.sum(predictions, axis=0)
-
-# Step 6: Model Complexity, Learning Rate Adjustments, Regularization Techniques, Early Stopping
-
-# These can be implemented by adjusting model hyperparameters and training procedures accordingly
-
-# Step 7: Evaluate the boosted model
-y_pred_test = predict_boosted(X_test, boosted_models)
-mse = mean_squared_error(y_test, y_pred_test)
-print("Mean Squared Error on Test Set:", mse)
-
-
-
-
-https://app.intotheblock.com/coin/BTC
-
-https://bitcoinvisuals.com/
-
-https://defillama.com/docs/api
-
-https://fred.stlouisfed.org/docs/api/fred/#API
-
-https://stocktoflow.com/
-
-https://developer.twitter.com/en/docs/api-reference-index
 
