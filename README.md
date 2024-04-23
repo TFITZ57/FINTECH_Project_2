@@ -18,7 +18,7 @@
 This project aims to analyze and predict cryptocurrency prices and blockchain activities using machine learning techniques, specifically Long Short-Term Memory (LSTM) networks. The data includes various metrics related to Bitcoin, Ethereum, and Dogecoin, as well as blockchain activity and mining data.
 
 ## Data Description
-The dataset comprises multiple metrics grouped into the following categories:
+The dataset from CoinMetrics is comprosed of multiple metrics grouped into the following categories:
 - **Basic Price Information**: Prices of BTC, ETH, and DOGE in USD.
 - **Blockchain Activity Metrics**: Active addresses, transaction count, value, block difficulty, and total fees in USD.
 - **Mining and Revenue Metrics**: Mining revenue, hash rate, hash price, and Bitcoin held by miners.
@@ -44,6 +44,27 @@ The dataset comprises multiple metrics grouped into the following categories:
 ## Requirements
 - Python 3.x
 - Libraries: pandas, numpy, tensorflow, keras, matplotlib, seaborn, sklearn, pywt (for wavelet transforms)
+
+## Installation and Usage
+
+To run this project, you will need to have the following dependencies installed:
+
+- Python (version 3.6 or later)
+- Jupyter Notebook or VSCode
+- Pandas
+- Scikit-Learn
+- TensorFlow
+- Seaborn (optional, for data visualization)
+- hvPlot (optional, for interactive visualizations)
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required dependencies in your terminal or command prompt.
+5. Open the relevant Jupyter Notebook file(s) and run the cells to train the model, make predictions, and visualize the results.
+
+## Examples and Results
+screenshots showcasing the application and visualizations:
+
 
 ## Acknowledgments
 * CoinMetrics API for providing access to their comprehensive crypto data.
