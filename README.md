@@ -45,13 +45,7 @@ The dataset comprises multiple metrics grouped into the following categories:
 - Python 3.x
 - Libraries: pandas, numpy, tensorflow, keras, matplotlib, seaborn, sklearn, pywt (for wavelet transforms)
 
-## Usage
-Install required packages:
-```bash
-pip install -r requirements.txt
-Run the main script: python main.py
-
-##Acknowledgments
+## Acknowledgments
 * CoinMetrics API for providing access to their comprehensive crypto data.
 * Community contributions and suggestions that helped shape the analysis.
 
