@@ -1,6 +1,30 @@
 # Cryptocurrency Data Modeling Project
 
 ## Table of Contents
+1. Introduction
+2. Project Overview
+3. Executive Summary
+4. Project Goals
+5. Importance of Machine Learning in Cryptocurrency Trading
+6. Approach
+7. Data Source Selection and Preparation
+8. Model Training Process
+9. Sequential Training
+10. Aggregation of Predictions
+11. Model Complexity
+12. Learning Rate Adjustments
+13. Regularization Techniques
+14. Boosted LSTM Integration
+15. Early Stopping
+16. Error Monitoring
+17. Diverse Initialization
+18. Data Results and Visualizations
+19. Key Challenges
+20. Expected Outcomes
+21. Conclusion
+22. Next Steps
+
+
 1. [Overview](#overview)
 2. [Data Description](#data-description)
 3. [Steps](#steps)
