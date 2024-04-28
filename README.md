@@ -102,4 +102,15 @@ screenshots showcasing the application and visualizations:
 - Stock to Flow Model: Understand the relationship between production and current stock available, used for predicting Bitcoin prices. [Learn about Stock to Flow](https://stocktoflow.com/)
 - Twitter API Reference: Official API documentation for accessing Twitter data programmatically. [Twitter API Docs](https://developer.twitter.com/en/docs/api-reference-index)
 
+## Slide Show Presentation:
+
+Project 2: BTC_Prediction_Model- Team 3. [Visit Project 2-BTC_Prediction_Model](https://docs.google.com/presentation/d/1GlbIsihWSoSMavqMc0LE-T_36OEocnTH4ASx6DlJhmg/edit?userstoinvite=anderssj%40usc.edu&sharingaction=manageaccess&role=writer#slide=id.g2cf72085fa3_4_33)
+
+
+
+
+
+
+
+
 
