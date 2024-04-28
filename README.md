@@ -14,8 +14,17 @@
 7. [References](#references)
 
 
-## Overview
+## Project Overview
 This project aims to analyze and predict cryptocurrency prices and blockchain activities using machine learning techniques, specifically Long Short-Term Memory (LSTM) networks. The data includes various metrics related to Bitcoin, Ethereum, and Dogecoin, as well as blockchain activity and mining data.
+The project overview outlines following factors that were considered when when accessing cryptocurrencies as  potential asset evaluation for the Bitcoin Model.
+
+1. Growing Popularity and Volatility:
+   •	Cryptocurrencies, such as Bitcoin, Ethereum, and others, have gained immense popularity in recent years, attracting investors and traders worldwide.
+2. Need for Advanced Techniques:
+   •	Traditional trading approaches may not suffice in the highly dynamic and unpredictable cryptocurrency markets.
+3. Importance of Tailored Strategies:
+   •	Cryptocurrency markets exhibit unique characteristics and behaviors compared to traditional financial markets.
+   •	Therefore, developing model predictability tailored specifically for cryptocurrencies is essential to account for their distinct dynamics and optimize trading performance.
 
 ## Data Selection and Metrics Scope
 Coinmetrics is selected for its robustness and reliability in providing comprehensive cryptocurrency market data.
