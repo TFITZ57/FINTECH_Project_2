@@ -17,8 +17,21 @@
 ## Overview
 This project aims to analyze and predict cryptocurrency prices and blockchain activities using machine learning techniques, specifically Long Short-Term Memory (LSTM) networks. The data includes various metrics related to Bitcoin, Ethereum, and Dogecoin, as well as blockchain activity and mining data.
 
-## Data Description
-The dataset from CoinMetrics is comprosed of multiple metrics grouped into the following categories:
+## Data Selection and Metrics Scope
+Coinmetrics is selected for its robustness and reliability in providing comprehensive cryptocurrency market data.
+•	The platform offers a wide range of metrics and indicators, allowing for in-depth analysis and modeling of cryptocurrency price movements.
+•	Coinmetrics' reputation for data accuracy and integrity makes it a trusted source for building predictive models and making informed trading decisions.
+•	Its API and datasets provide convenient access to historical and real-time cryptocurrency data, facilitating seamless integration into the project's workflow.
+
+Coinmetrics provides various data metrics related to cryptocurrencies, including but not limited to:
+1. Price Metrics: Such as open, high, low, close prices, and trading volume.
+2. Network Metrics: Including hash rate, difficulty, and block size.
+3. Transaction Metrics: Such as transaction count, transaction volume, and average transaction value.
+4. Mining Metrics: Including miner revenue, miner fees, and block rewards
+
+These metrics provide insights into various aspects of cryptocurrency networks and their ecosystems, enabling analysis, research, and decision-making for traders, investors, researchers, and other stakeholders.
+
+Additional Date Availability CoinMetrics is comprosed of multiple metrics grouped into the following categories:
 - **Basic Price Information**: Prices of BTC, ETH, and DOGE in USD.
 - **Blockchain Activity Metrics**: Active addresses, transaction count, value, block difficulty, and total fees in USD.
 - **Mining and Revenue Metrics**: Mining revenue, hash rate, hash price, and Bitcoin held by miners.
