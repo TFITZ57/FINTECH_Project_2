@@ -2,31 +2,31 @@
 
 ## Table of Contents
 1. Introduction
-2. Project Overview
-3. Executive Summary
-4. Project Goals
-5. Importance of Machine Learning in Cryptocurrency Trading
-6. Approach
-7. Data Source Selection and Preparation
-8. Model Training Process
-9. Sequential Training
-10. Aggregation of Predictions
-11. Model Complexity
-12. Learning Rate Adjustments
-13. Regularization Techniques
-14. Boosted LSTM Integration
-15. Early Stopping
-16. Error Monitoring
-17. Diverse Initialization
-18. Data Results and Visualizations
-19. Key Challenges
-20. Expected Outcomes
-21. Conclusion
-22. Next Steps
+2. Project Overview (#overview)
+4. Executive Summary
+5. Project Goals
+6. Importance of Machine Learning in Cryptocurrency Trading
+7. Approach
+8. Data Source Selection and Preparation(#data-description)
+9. Model Training Process
+10. Sequential Training
+11. Aggregation of Predictions
+12. Model Complexity
+13. Learning Rate Adjustments
+14. Regularization Techniques
+15. Boosted LSTM Integration
+16. Early Stopping
+17. Error Monitoring
+18. Diverse Initialization
+19. Data Results and Visualizations
+20. Key Challenges
+21. Expected Outcomes
+22. Conclusion
+23. Next Steps
 
 
-1. [Overview](#overview)
-2. [Data Description](#data-description)
+1. [Overview]
+2. [Data Description]
 3. [Steps](#steps)
    - [Step 1: Data Collection](#step-1-data-collection)
    - [Step 2: Data Preprocessing](#step-2-data-preprocessing)
@@ -37,8 +37,12 @@
 6. [Acknowledgments](#acknowledgments)
 7. [References](#references)
 
+## Executive Summary:
+1.  Project Objective:
+•	The primary objective of this project is to develop a Bitcoin Prediction Model specifically designed for cryptocurrency markets.
+•	By leveraging advanced machine learning techniques, our goal is to create a robust framework capable of making informed trading decisions in the rapidly evolving     cryptocurrency landscape.
 
-## Project Overview
+## Project Overview:
 This project aims to analyze and predict cryptocurrency prices and blockchain activities using machine learning techniques, specifically Long Short-Term Memory (LSTM) networks. The data includes various metrics related to Bitcoin, Ethereum, and Dogecoin, as well as blockchain activity and mining data.
 The project overview outlines following factors that were considered when when accessing cryptocurrencies as  potential asset evaluation for the Bitcoin Model.
 
@@ -50,7 +54,7 @@ The project overview outlines following factors that were considered when when a
    •	Cryptocurrency markets exhibit unique characteristics and behaviors compared to traditional financial markets.
    •	Therefore, developing model predictability tailored specifically for cryptocurrencies is essential to account for their distinct dynamics and optimize trading performance.
 
-## Data Selection and Metrics Scope
+## Data Selection and Metrics Scope:
 Coinmetrics is selected for its robustness and reliability in providing comprehensive cryptocurrency market data.
 •	The platform offers a wide range of metrics and indicators, allowing for in-depth analysis and modeling of cryptocurrency price movements.
 •	Coinmetrics' reputation for data accuracy and integrity makes it a trusted source for building predictive models and making informed trading decisions.
