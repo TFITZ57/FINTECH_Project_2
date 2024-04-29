@@ -274,7 +274,7 @@ In the absence of concrete data results, it's still possible to outline the expe
 By outlining these expected outcomes, even in the absence of data results, you can provide a clear understanding of the project's objectives, motivations, and anticipated contributions to the field of algorithmic trading for cryptocurrencies.
 
 
-## Data Results and Mitigating Facotrs :
+## Data Results and Mitigating Factors :
 In the absence of data results to showcase for the project, it's essential to provide extensive detail on various aspects of the project, including the methodology, model architecture, training process, challenges faced, and potential insights gained. 
 
 1. **Methodology Overview:**
