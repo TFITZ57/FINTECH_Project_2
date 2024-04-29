@@ -196,9 +196,36 @@ Provides a more accurate prediction model than non-boosted integrations.
    - The weights for each model were determined based on its performance on a validation dataset, with higher-performing models given more weight in the final    
      prediction.
 
+## Model Complexity :
+   - We carefully considered the complexity of each LSTM model in the ensemble to balance model performance and overfitting.
+   - Model complexity was adjusted by varying the number of LSTM units, layers, and other architectural parameters to achieve optimal performance.
 
+## Regularization Techniques :
+Regularization techniques are essential components of the Bitcoin Prediction Model, designed to prevent overfitting and improve the model's generalization performance. Here's how regularization techniques are applied in the context of the Bitcoin Prediction Model, as demonstrated in the previous code and slide show:
 
+1. **Dropout:**
+   - Dropout is a widely used regularization technique that involves randomly deactivating a fraction of neurons during training, effectively introducing noise and preventing co-adaptation of neurons.
+   - In the Bitcoin Prediction Model, dropout layers can be incorporated into the LSTM architecture to randomly drop units (neurons) along with their connections during training.
+   - By randomly dropping units, dropout helps prevent over-reliance on specific features or neurons, encouraging the model to learn more robust and generalizable representations.
 
+2. **L1/L2 Regularization:**
+   - L1 and L2 regularization impose penalties on the model's weights to discourage overly complex solutions and prevent overfitting.
+   - In the context of the Bitcoin Prediction Model, L1 and L2 regularization terms can be added to the loss function during training, penalizing large weights.
+   - L1 regularization (Lasso) adds the absolute value of the weights to the loss function, encouraging sparsity by driving some weights to zero.
+   - L2 regularization (Ridge) adds the squared magnitude of the weights to the loss function, penalizing large weights without driving them to zero.
+   - By adding regularization terms to the loss function, L1/L2 regularization encourages the model to learn simpler and more generalizable patterns from the data, reducing the risk of overfitting.
+
+3. **Recurrent Dropout:**
+   - Recurrent Dropout is a variant of dropout specifically designed for recurrent neural networks (RNNs) like LSTM.
+   - In the Bitcoin Prediction Model, recurrent dropout can be applied to the LSTM layers to randomly mask inputs or states during training.
+   - By randomly masking inputs or states, recurrent dropout prevents LSTM cells from memorizing sequences too perfectly, promoting better generalization to unseen data.
+
+4. **Implementation:**
+   - Regularization techniques such as dropout, L1/L2 regularization, and recurrent dropout can be implemented using TensorFlow's built-in layers or custom regularizers.
+   - These regularization techniques are typically configured during the construction of the LSTM model, allowing for fine-tuning of regularization strength and application to specific layers.
+   - By incorporating regularization techniques into the Bitcoin Prediction Model, the model becomes more resilient to overfitting and better equipped to make accurate predictions on unseen cryptocurrency price data.
+
+In summary, regularization techniques play a crucial role in enhancing the Bitcoin Prediction Model's performance by preventing overfitting and improving generalization. By incorporating dropout, L1/L2 regularization, and recurrent dropout, the model becomes more robust and reliable for predicting cryptocurrency price movements in dynamic market conditions.
 
 
 
