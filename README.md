@@ -95,6 +95,13 @@ Additional Date Availability CoinMetrics is comprosed of multiple metrics groupe
    - By leveraging advanced machine learning techniques and ensemble methods, we aspire to achieve a balance between profitability and risk management, thereby delivering value to our stakeholders.
 
 
+## Importance of Machine Learning in Cryptocurrency Trading:
+The project lies at the intersection of fintech and machine learning, leveraging advanced algorithms to analyze cryptocurrency data and make informed trading decisions.
+- Machine learning enables us to analyze vast amounts of cryptocurrency data and extract meaningful insights for making informed trading decisions.
+- LSTM models, in particular, have shown promise in capturing complex patterns and trends in cryptocurrency price data, leading to improved prediction accuracy and trading performance.
+
+
+
 
 ## Steps
 
