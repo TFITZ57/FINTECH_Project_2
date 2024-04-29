@@ -38,7 +38,8 @@
 7. [References](#references)
 
 ## Executive Summary:
-1.  Project Objective:
+Project Objective:
+
 •	The primary objective of this project is to develop a Bitcoin Prediction Model specifically designed for cryptocurrency markets.
 •	By leveraging advanced machine learning techniques, our goal is to create a robust framework capable of making informed trading decisions in the rapidly evolving     cryptocurrency landscape.
 
@@ -97,10 +98,18 @@ Additional Date Availability CoinMetrics is comprosed of multiple metrics groupe
 
 ## Importance of Machine Learning in Cryptocurrency Trading:
 The project lies at the intersection of fintech and machine learning, leveraging advanced algorithms to analyze cryptocurrency data and make informed trading decisions.
-- Machine learning enables us to analyze vast amounts of cryptocurrency data and extract meaningful insights for making informed trading decisions.
-- LSTM models, in particular, have shown promise in capturing complex patterns and trends in cryptocurrency price data, leading to improved prediction accuracy and trading performance.
+   - Machine learning enables us to analyze vast amounts of cryptocurrency data and extract meaningful insights for making informed trading decisions.
+   - LSTM models, in particular, have shown promise in capturing complex patterns and trends in cryptocurrency price data, leading to improved prediction accuracy    
+     and trading performance.
 
 
+## Approach:- Data collection and preprocessing: Obtain cryptocurrency data from reliable sources such as Coinmetrics and preprocess it to prepare for model training.
+   1. Data Collection: Gather cryptocurrency data from exchanges, APIs, and historical databases to capture a comprehensive dataset of price movements.
+   2. Data Preprocessing: Prepare the data for analysis by cleaning-Remove errors or inconsistencies, normalizing-Standardize data ranges to avoid model bias, and
+      feature Engineering-Develop new variables from existing data to enhance model predictions.
+   3. Model development: Train LSTM models on the prepared dataset and implement ensemble methods to aggregate predictions and optimize trading decisions.
+   4. Evaluation: Evaluate model performance using relevant metrics such as accuracy, mean squared error, and profitability to ensure the effectiveness of the    
+      trading strategy.
 
 
 ## Steps
