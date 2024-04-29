@@ -136,7 +136,7 @@ The project lies at the intersection of fintech and machine learning, leveraging
      - The model was trained using historical cryptocurrency price data, market indicators, and blockchain metrics to learn patterns and trends in the data.
      - Training parameters such as batch size, epochs, and optimizer settings were tuned to optimize model performance.
 
-### Wavelet Transforms:
+### Wavelet Transforms
    -Denoising and Signal Extraction of temporal data, excellent in analyzing non-stationary data  
    -Passes the signal through different filters to analyze frequency components at different scales
    
@@ -152,7 +152,7 @@ Wavelet transforms can be utilized as a preprocessing step to enhance the qualit
 By integrating wavelet transforms into the model training process, we can preprocess the data effectively, enhancing the model's ability to learn and extract relevant features for predicting cryptocurrency price movements.
 
 
-### Feature Engineering:
+### Feature Engineering
 Lagged values, Rolling Windows, Standard deviation
 In the model training process, feature engineering plays a crucial role in preparing the input data to be fed into the machine learning model. Here's how each of the mentioned feature engineering techniques—lagged values, rolling windows, and standard deviation—is tied to the model training process:
 
@@ -170,17 +170,31 @@ In the model training process, feature engineering plays a crucial role in prepa
 
 By incorporating lagged values, rolling windows, and standard deviation as features in the training dataset, the machine learning model can learn from the temporal patterns and variability present in the data, ultimately leading to more robust and accurate predictions.
 
-### Sequence Creation:
+### Sequence Creation
 Sequence creation is a fundamental step in preparing time series data for training sequence models. By organizing the data into sequences and encoding them appropriately, we enable the model to learn from the temporal dynamics of the data and make accurate predictions over time.
 
-### Model Architecture:
+### Model Architecture
 Model architecture choices, including activation functions, the number of layers, and hidden units, play a critical role in shaping the behavior of the model during training. These decisions influence how the model learns from the data, the complexity of representations it can capture, and its overall performance on the task at hand.
 
-### Hyperparameter Tuning: 
+### Hyperparameter Tuning
 Boosted LSTM Integration
 Allows subsequent LSTM models to target remaining patterns or nuances insufficiently captured by earlier models
 Provides a more accurate prediction model than non-boosted integrations.
 
+
+## Sequential Training :
+   - After training the initial LSTM model, we implemented sequential training to improve prediction accuracy.
+   - Additional LSTM models were trained on residuals or errors between predicted and actual values to capture missed patterns.
+   - Each subsequent model focused on learning from the residuals left by its predecessors, leading to iterative improvement in prediction performance.
+
+
+## Aggregration Predictions :
+   - This approach is commonly used in machine learning and data science to enhance transparency and understanding of such predictive models.
+     There are several ways to aggregate predictions in machine learning.
+   - This would be the process of combining explainations from multiple prediction models or sources into a cohesive understanding.
+   - Predictions from multiple LSTM models were aggregated using weighted averaging.
+   - The weights for each model were determined based on its performance on a validation dataset, with higher-performing models given more weight in the final    
+     prediction.
 
 
 
