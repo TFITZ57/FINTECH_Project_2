@@ -89,11 +89,13 @@ Additional Date Availability CoinMetrics is comprosed of multiple metrics groupe
 3. Optimizing Trading Decisions:
    - Beyond prediction, our project seeks to optimize trading decisions in the cryptocurrency market.
    - By integrating machine learning predictions with sophisticated trading algorithms, we aim to maximize returns and mitigate risks associated with cryptocurrency trading.
-   - Through systematic analysis of market signals and adaptive decision-making, our goal is to develop a trading strategy that capitalizes on opportunities while minimizing potential losses.
+   - Through systematic analysis of market signals and adaptive decision-making, our goal is to develop a trading strategy that capitalizes on opportunities while    
+     minimizing potential losses.
 
 4. Maximizing Returns and Mitigating Risks:
    - Ultimately, our overarching goal is to maximize returns for investors while simultaneously mitigating risks inherent in the cryptocurrency market.
-   - By leveraging advanced machine learning techniques and ensemble methods, we aspire to achieve a balance between profitability and risk management, thereby delivering value to our stakeholders.
+   - By leveraging advanced machine learning techniques and ensemble methods, we aspire to achieve a balance between profitability and risk management, thereby 
+     delivering value to our stakeholders.
 
 
 ## Importance of Machine Learning in Cryptocurrency Trading:
@@ -103,29 +105,92 @@ The project lies at the intersection of fintech and machine learning, leveraging
      and trading performance.
 
 
-## Approach:- Data collection and preprocessing: Obtain cryptocurrency data from reliable sources such as Coinmetrics and preprocess it to prepare for model training.
-   1. Data Collection: Gather cryptocurrency data from exchanges, APIs, and historical databases to capture a comprehensive dataset of price movements.
+## Approach:
+   1. Data Collection: Gather cryptocurrency data from reliable sources such as Coinmetrics (exchanges, APIs, and historical databases) to capture a comprehensive    
+      dataset of price movements.
    2. Data Preprocessing: Prepare the data for analysis by cleaning-Remove errors or inconsistencies, normalizing-Standardize data ranges to avoid model bias, and
       feature Engineering-Develop new variables from existing data to enhance model predictions.
    3. Model development: Train LSTM models on the prepared dataset and implement ensemble methods to aggregate predictions and optimize trading decisions.
    4. Evaluation: Evaluate model performance using relevant metrics such as accuracy, mean squared error, and profitability to ensure the effectiveness of the    
       trading strategy.
-
-
+      
 ## Steps
 
 ### Step 1: Data Collection
-- Data is sourced from various reliable crypto analytics platforms.
+   - Data is sourced from various reliable crypto analytics platforms.
 
 ### Step 2: Data Preprocessing
-- Includes cleaning, handling missing values, outlier detection, and feature engineering such as timestamp decomposition and rolling window statistics.
+   - Includes cleaning, handling missing values, outlier detection, and feature engineering such as timestamp decomposition and rolling window statistics.
 
 ### Step 3: Model Building and Evaluation
-- Using LSTM networks to capture temporal dependencies within the data.
-- Models are evaluated based on their prediction accuracy and ability to generalize using time series cross-validation.
+   - Using LSTM networks to capture temporal dependencies within the data.
+   - Models are evaluated based on their prediction accuracy and ability to generalize using time series cross-validation.
 
 ### Step 4: Implementation of Boosted LSTM
-- Boosting technique is applied to LSTM to enhance model performance by focusing on the residuals of previous models.
+   - Boosting technique is applied to LSTM to enhance model performance by focusing on the residuals of previous models.
+
+
+
+## Model Training Process:
+     - We trained an initial LSTM model on the cryptocurrency dataset to establish a baseline for prediction.
+     - The model was trained using historical cryptocurrency price data, market indicators, and blockchain metrics to learn patterns and trends in the data.
+     - Training parameters such as batch size, epochs, and optimizer settings were tuned to optimize model performance.
+
+### Wavelet Transforms:
+   -Denoising and Signal Extraction of temporal data, excellent in analyzing non-stationary data  
+   -Passes the signal through different filters to analyze frequency components at different scales
+   
+Wavelet transforms can be utilized as a preprocessing step to enhance the quality of the input data before feeding it into the model.
+   1. **Denoising and Signal Extraction:** Before training the model, temporal data, such as cryptocurrency price series, often contains noise or irrelevant       
+   fluctuations. Applying wavelet transforms helps denoise the data by separating the signal from the noise. This ensures that the model focuses on learning 
+   meaningful patterns rather than being influenced by irrelevant fluctuations.
+
+   2. **Analysis of Non-Stationary Data:** Cryptocurrency price data is inherently non-stationary, meaning its statistical properties change over time. Wavelet 
+   transforms excel in analyzing such data by decomposing it into different frequency components at varying scales. This decomposition enables the model to capture 
+   complex temporal patterns and variations present in the cryptocurrency market.
+
+By integrating wavelet transforms into the model training process, we can preprocess the data effectively, enhancing the model's ability to learn and extract relevant features for predicting cryptocurrency price movements.
+
+
+### Feature Engineering:
+Lagged values, Rolling Windows, Standard deviation
+In the model training process, feature engineering plays a crucial role in preparing the input data to be fed into the machine learning model. Here's how each of the mentioned feature engineering techniques—lagged values, rolling windows, and standard deviation—is tied to the model training process:
+
+1. **Lagged Values:**
+   - **Implementation:** Lagged values involve including past observations of relevant variables as features in the dataset. This can be implemented by shifting the time series data by a certain number of time steps to create lagged features.
+   - **Training:** During model training, the dataset containing lagged values is used to train the machine learning model. The model learns from the historical patterns and relationships between lagged values and target variables to make predictions.
+
+2. **Rolling Windows:**
+   - **Implementation:** Rolling windows involve calculating summary statistics (e.g., mean, median) over a fixed window of past observations. This can be implemented using functions like `rolling()` in pandas or custom functions to calculate statistics over specific time windows.
+   - **Training:** The dataset with rolling window features is used to train the machine learning model. These features provide temporal context and capture trends over time, allowing the model to learn from the evolving nature of the data.
+
+3. **Standard Deviation:**
+   - **Implementation:** Standard deviation measures the dispersion or variability of a dataset. It can be calculated over a rolling window or for lagged values to capture volatility in the data.
+   - **Training:** Including standard deviation as a feature provides information about the variability of the underlying data. During model training, the model learns from these features to understand the level of volatility in the dataset and its impact on the target variable.
+
+By incorporating lagged values, rolling windows, and standard deviation as features in the training dataset, the machine learning model can learn from the temporal patterns and variability present in the data, ultimately leading to more robust and accurate predictions.
+
+### Sequence Creation:
+Sequence creation is a fundamental step in preparing time series data for training sequence models. By organizing the data into sequences and encoding them appropriately, we enable the model to learn from the temporal dynamics of the data and make accurate predictions over time.
+
+### Model Architecture:
+Model architecture choices, including activation functions, the number of layers, and hidden units, play a critical role in shaping the behavior of the model during training. These decisions influence how the model learns from the data, the complexity of representations it can capture, and its overall performance on the task at hand.
+
+### Hyperparameter Tuning: 
+Boosted LSTM Integration
+Allows subsequent LSTM models to target remaining patterns or nuances insufficiently captured by earlier models
+Provides a more accurate prediction model than non-boosted integrations.
+
+
+
+
+
+
+
+
+
+
+
 
 ## Requirements
 - Python 3.x
