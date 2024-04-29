@@ -76,6 +76,26 @@ Additional Date Availability CoinMetrics is comprosed of multiple metrics groupe
 - **Volatility and Network Flows**: Realized volatility over different periods and netflows from/to exchanges.
 - **Lagged Price Data**: Historical price data for time-series analysis.
 
+## Project Goals:
+1. Developing Machine Learning Models:
+   - Our primary goal is to develop machine learning models capable of accurately predicting cryptocurrency price movements.
+   - Leveraging historical price data and relevant market indicators, we aim to train sophisticated models, such as Long Short-Term Memory (LSTM) networks, to forecast future price trends with high precision.
+
+2. Implementing Ensemble Methods:
+   - In addition to individual machine learning models, we intend to implement ensemble methods to further enhance prediction accuracy and robustness.
+   - Ensemble methods combine the predictions of multiple models to produce a collective forecast that often outperforms any single model. By integrating diverse          perspectives and approaches, ensemble methods can effectively capture the complexity of cryptocurrency markets.
+
+3. Optimizing Trading Decisions:
+   - Beyond prediction, our project seeks to optimize trading decisions in the cryptocurrency market.
+   - By integrating machine learning predictions with sophisticated trading algorithms, we aim to maximize returns and mitigate risks associated with cryptocurrency trading.
+   - Through systematic analysis of market signals and adaptive decision-making, our goal is to develop a trading strategy that capitalizes on opportunities while minimizing potential losses.
+
+4. Maximizing Returns and Mitigating Risks:
+   - Ultimately, our overarching goal is to maximize returns for investors while simultaneously mitigating risks inherent in the cryptocurrency market.
+   - By leveraging advanced machine learning techniques and ensemble methods, we aspire to achieve a balance between profitability and risk management, thereby delivering value to our stakeholders.
+
+
+
 ## Steps
 
 ### Step 1: Data Collection
