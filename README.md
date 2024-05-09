@@ -328,71 +328,20 @@ In the absence of data results to showcase for the project, it's essential to pr
    - Emphasize the iterative nature of the project and the continuous pursuit of improvement and innovation in algorithmic trading strategies for cryptocurrency.
 
 ## Conclusions:
-Despite the absence of concrete data results, the culmination of this project offers valuable insights and reflections on the journey of developing a Bitcoin Prediction Model tailored for cryptocurrency markets. Here's an extensive conclusion based on the lack of results:
+After extensive manual exploration of various parameters, we achieved stability in both the loss and validation loss metrics by employing specific tools that enhanced our control over the model's learning process. Notably, the introduction of a learning rate scheduler and gradient clipping proved instrumental. Initially, overfitting emerged as a significant challenge due to the similarity of datasets and excessive coefficients, prompting us to refine our dataset by removing non-essential features. Subsequent exploratory analysis and iterations allowed us to gauge the impact of adjustments to the model parameters.
 
-1. **Reflection on the Project Objective:**
-   - The primary objective of this project was to develop a robust algorithmic trading strategy specifically designed for cryptocurrency markets. While the intended 
-     goal was to achieve improved prediction accuracy and enhance trading strategy performance, the absence of concrete data results necessitates a deeper reflection 
-     on the methodology and approach adopted.
+The learning rate scheduler was pivotal in enabling the model to converge by dynamically adjusting the learning rate during training. This adjustment could be based on a predetermined decay rate or through callbacks responsive to the model’s performance metrics. Once the data was refined, the issue of exploding gradients was mitigated, although I consider gradient clipping essential when working with LSTM networks.
 
-2. **Methodological Insights and Challenges:**
-   - Throughout the project, significant emphasis was placed on methodological rigor and the application of advanced machine learning techniques, such as LSTM 
-     models, ensemble methods, and regularization techniques. Despite meticulous planning and execution, the absence of data results underscores the inherent 
-     challenges and complexities involved in predicting cryptocurrency prices accurately.
-   - Challenges such as high market volatility, limited availability of historical data, and the need for real-time analysis pose significant hurdles in developing 
-     reliable prediction models for cryptocurrency trading. The absence of tangible results serves as a reminder of the unpredictable nature of cryptocurrency 
-     markets and the inherent risks associated with algorithmic trading in this domain.
+Due to time constraints, we could not employ a more systematic approach to parameter tuning using algorithms. However, hyperparameter tuning algorithms offer significant statistical benefits and are ideally suited for refining both the model architecture and parameters.
 
-3. **Lessons Learned and Future Directions:**
-   - While the project did not yield concrete data results, it provides valuable lessons and insights for future research and development in algorithmic trading for 
-     cryptocurrencies. The journey of data collection, preprocessing, model training, and evaluation has offered valuable experiential learning, highlighting the 
-     importance of flexibility, adaptability, and continuous improvement in algorithmic trading strategies.
-   - Moving forward, future research efforts could focus on addressing the challenges identified during this project, such as refining data preprocessing techniques, 
-     exploring alternative machine learning architectures, and incorporating additional data sources to improve prediction accuracy and robustness.
-   - Additionally, the project underscores the importance of interdisciplinary collaboration between domain experts, data scientists, and industry practitioners in 
-     tackling complex problems in cryptocurrency trading. By leveraging a diverse range of expertise and perspectives, future endeavors in algorithmic trading 
-     research can strive to overcome challenges and achieve meaningful advancements in the field.
+For model validation, we employed a standard hold-out method. With more time, a more robust approach using K-fold cross-validation with time series data splits would likely yield a more reliable model, particularly given the variability inherent in cryptocurrency data. This method would allow the model to be validated across the entire dataset spectrum, enhancing performance stability.
 
-4. **Conclusion and Outlook:**
-   - In conclusion, while the absence of data results may seem like a setback, it serves as a catalyst for reflection, learning, and growth. The journey of 
-     developing a Bitcoin Prediction Model has been a valuable experience, offering insights into the intricacies of algorithmic trading in cryptocurrency markets.
-   - As we navigate the dynamic landscape of cryptocurrency trading, the lessons learned from this project will undoubtedly inform future endeavors, shaping the 
-     trajectory of algorithmic trading research and innovation. While the road ahead may be challenging, it is also ripe with opportunities for discovery, 
-     collaboration, and advancement in the fascinating intersection of finance, technology, and data science.
+To enhance the predictive accuracy of our trained model, we implemented a boosted LSTM layer designed to predict and correct the residuals of the base model. By training an ensemble of models to target areas where the base model underperformed and aggregating their predictions, we significantly improved the model’s predictive capability, which is especially beneficial for complex datasets.
 
-By embracing the lessons learned from this project and maintaining a spirit of curiosity and resilience, we can continue to push the boundaries of knowledge and make meaningful contributions to the ever-evolving field of algorithmic trading for cryptocurrencies.
+The final model exhibited an RMSE of 15, which was higher than the base model’s RMSE of 1.4, likely due to potential overfitting and suboptimal model architecture. This issue could be addressed by adopting more sophisticated model construction and training techniques, coupled with detailed monitoring and logging during training sessions to better understand the model's performance with each new data input.
 
+Future improvements could focus on data processing to minimize overfitting and enhance feature engineering. Implementing a more rigorous feature selection process based on mutual information scores would help in identifying the most predictive features. This process assesses the information shared between features and the target variable, selecting only those features with the highest scores to ensure their relevance and impact on model performance. Tracking model performance throughout these adjustments will provide insights into their effectiveness.
 
-## Next Steps:
-In light of the absence of data results, the project's next steps would focus on several key areas aimed at addressing the challenges encountered and further refining the algorithmic trading strategy for cryptocurrency markets. Here's an extensive detail on the next steps:
-
-1. **Refinement of Data Collection and Preprocessing Techniques:**
-   - Given the challenges associated with data availability and quality, the next step would involve refining data collection and preprocessing techniques. This 
-     could include exploring alternative data sources, such as blockchain data or sentiment analysis from social media, to supplement existing datasets. 
-     Additionally, efforts would be directed towards improving data cleaning, normalization, and feature engineering processes to enhance the quality and relevance 
-     of input data for model training.
-
-2. **Exploration of Alternative Machine Learning Architectures:**
-   - In light of the limitations encountered with LSTM models and ensemble methods, the project would explore alternative machine learning architectures tailored 
-     specifically for cryptocurrency price prediction. This could involve investigating deep learning architectures like convolutional neural networks (CNNs) or 
-     transformer models, which may offer improved capabilities in capturing complex patterns and trends in cryptocurrency data.
-
-3. **Integration of External Factors and Indicators:**
-   - Recognizing the multifaceted nature of cryptocurrency markets, future efforts would focus on integrating external factors and indicators into the prediction 
-     model. This could include incorporating macroeconomic indicators, regulatory developments, and market sentiment analysis to augment the predictive capabilities 
-     of the algorithmic trading strategy. By considering a broader range of factors, the model can better adapt to changing market conditions and improve prediction 
-     accuracy.
-
-4. **Implementation of Advanced Trading Strategies:**
-   - Building upon the foundation of the algorithmic trading strategy, the next steps would involve implementing advanced trading strategies to optimize decision- 
-     making and risk management. This could include the development of dynamic portfolio allocation techniques, algorithmic execution strategies, and risk-adjusted 
-     performance metrics to enhance overall trading performance and profitability.
-
-5. **Evaluation and Validation Framework Enhancement:**
-   - To ensure the robustness and reliability of the algorithmic trading strategy, future efforts would focus on enhancing the evaluation and validation framework. 
-     This could involve implementing more rigorous backtesting procedures, conducting out-of-sample testing on unseen data, and incorporating statistical techniques 
-     for performance analysis and risk assessment. By rigorously evaluating the model's performance under diverse market conditions, we can gain confidence in its 
-     effectiveness and generalizability.
 
 6. **Continuous Learning and Adaptation:**
    - Finally, the project's next steps would emphasize a culture of continuous learning and adaptation. This includes staying updated on the latest research 
